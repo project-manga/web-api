@@ -1,5 +1,6 @@
-﻿namespace ProjectManga.Domain.Download
+﻿namespace ProjectManga.Domain.Download.Models
 {
+    using ProjectManga.Domain.Download.Vos;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>

@@ -1,5 +1,7 @@
 ﻿namespace ProjectManga.Domain.Download
 {
+    using ProjectManga.Domain.Download.Models;
+
     /// <summary>
     /// Download request model repository
     /// </summary>

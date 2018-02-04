@@ -1,6 +1,8 @@
 ﻿namespace ProjectManga.Web.Services
 {
     using ProjectManga.Domain.Download;
+    using ProjectManga.Domain.Download.Models;
+    using ProjectManga.Domain.Download.Vos;
     using ProjectManga.Web.Dtos;
 
     /// <summary>

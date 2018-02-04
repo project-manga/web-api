@@ -1,4 +1,4 @@
-﻿namespace ProjectManga.Domain.Download
+﻿namespace ProjectManga.Domain.Download.Vos
 {
     /// <summary>
     /// Download sources (such as goodmanga, mangahere etc..)

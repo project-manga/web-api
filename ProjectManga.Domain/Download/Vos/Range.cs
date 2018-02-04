@@ -1,4 +1,4 @@
-﻿namespace ProjectManga.Domain.Download
+﻿namespace ProjectManga.Domain.Download.Vos
 {
     /// <summary>
     /// Represents a range with both or none

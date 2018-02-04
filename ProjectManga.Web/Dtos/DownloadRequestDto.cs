@@ -1,6 +1,6 @@
 namespace ProjectManga.Web.Dtos
 {
-    using ProjectManga.Domain.Download;
+    using ProjectManga.Domain.Download.Vos;
     using System;
 
     /// <summary>
