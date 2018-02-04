@@ -11,7 +11,6 @@
         /// Creates a new download request.
         /// </summary>
         /// <param name="downloadRequest">Creating download request</param>
-        /// <returns>Returns the created download request id</returns>
-        long CreateDownloadRequest(DownloadRequestDto downloadRequest);
+        void CreateDownloadRequest(DownloadRequestDto downloadRequest);
     }
 }

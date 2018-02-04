@@ -1,5 +1,6 @@
 namespace ProjectManga.Web.Dtos
 {
+    using ProjectManga.Domain.Download;
     using System;
 
     /// <summary>
@@ -17,7 +18,7 @@ namespace ProjectManga.Web.Dtos
         /// Gets or sets download source.
         /// </summary>
         /// <returns></returns>
-        public DownloadSourceDto DownloadSource { get; set; }
+        public DownloadSource DownloadSource { get; set; }
 
         /// <summary>
         /// Gets or sets the download configuration.
