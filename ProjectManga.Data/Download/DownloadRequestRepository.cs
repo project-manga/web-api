@@ -1,5 +1,6 @@
 ﻿namespace ProjectManga.Data.Download
 {
+    using System;
     using ProjectManga.Domain;
     using ProjectManga.Domain.Download;
     using ProjectManga.Domain.Download.Models;
@@ -14,10 +15,10 @@
         /// <summary>
         /// Constructs the repository.
         /// </summary>
-        /// <param name="uow">Unit of work</param>
-        public DownloadRequestRepository(IUnitOfWork uow)
-            : base(uow)
+        public DownloadRequestRepository(
+            IDownloadRequestGateway downloadRequestGateway)
         {
+            this.downloadRequestGateway = downloadRequestGateway;
         }
         #endregion
 
@@ -25,9 +26,13 @@
 #pragma warning disable CS1591
         public void Add(DownloadRequest downloadRequest)
         {
-            Uow.Add(downloadRequest);
+            downloadRequestGateway.Insert(null);
         }
 #pragma warning disable CS1591
+        #endregion
+
+        #region Private
+        private readonly IDownloadRequestGateway downloadRequestGateway;
         #endregion
     }
 }

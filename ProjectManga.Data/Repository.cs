@@ -14,17 +14,9 @@
         /// Constructs the repository.
         /// </summary>
         /// <param name="uow">Unit of work</param>
-        protected Repository(IUnitOfWork uow)
+        protected Repository()
         {
-            Uow = uow ?? throw new ArgumentNullException(paramName: nameof(uow));
         } 
-        #endregion
-
-        #region Protected
-        /// <summary>
-        /// Gets the unit of work.
-        /// </summary>
-        protected IUnitOfWork Uow { get; } 
         #endregion
     }
 }
