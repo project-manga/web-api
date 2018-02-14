@@ -13,7 +13,6 @@
         /// <summary>
         /// Constructs the repository.
         /// </summary>
-        /// <param name="uow">Unit of work</param>
         protected Repository()
         {
         } 

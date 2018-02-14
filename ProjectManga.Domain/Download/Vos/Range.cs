@@ -1,10 +1,12 @@
 ﻿namespace ProjectManga.Domain.Download.Vos
 {
+    using ProjectManga.Domain.Common;
+
     /// <summary>
     /// Represents a range with both or none
     /// bounds.
     /// </summary>
-    public struct Range
+    public class Range : ValueObject
     {
         #region Constructors
         /// <summary>
@@ -21,12 +23,12 @@
 
         #region Public
         /// <summary>
-        /// Gets or sets from value.
+        /// Gets from value.
         /// </summary>
         public int? From { get; }
 
         /// <summary>
-        /// Gets or sets to value.
+        /// Gets to value.
         /// </summary>
         public int? To { get; }
 

@@ -18,7 +18,7 @@
         public DownloadRequestRepository(
             IDownloadRequestGateway downloadRequestGateway)
         {
-            this.downloadRequestGateway = downloadRequestGateway;
+            this.downloadRequestGateway = downloadRequestGateway ?? throw new ArgumentNullException(nameof(downloadRequestGateway));
         }
         #endregion
 
