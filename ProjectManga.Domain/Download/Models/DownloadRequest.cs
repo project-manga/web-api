@@ -1,76 +1,35 @@
 ﻿namespace ProjectManga.Domain.Download.Models
 {
+    using ProjectManga.Domain.Common;
     using ProjectManga.Domain.Download.Vos;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Represents a download request model entity
+    /// Represents a download request model entity (aggregate root)
     /// </summary>
-    public class DownloadRequest
+    public class DownloadRequest : Entity<DownloadRequestId>
     {
         #region Constructors
         /// <summary>
         /// Creates download request.
         /// </summary>
         /// <param name="id">Download request id</param>
-        /// <param name="source">Download request source</param>
-        /// <param name="request">Download request content</param>
-        /// <param name="chaptersRange">Request chapters range</param>
-        /// <param name="partsRange">Request chapters parts range</param>
-        /// <param name="pagesRange">Request pages range</param>
+        /// <param name="configuration">Download request configuration</param>
         public DownloadRequest(
-            long id,
-            DownloadSource source,
-            string request,
-            Range chaptersRange,
-            Range partsRange,
-            Range pagesRange)
+            DownloadRequestId id,
+            IDownloadRequestConfiguration configuration)
+            : base(id)
         {
-            Id = id;
-            Source = source;
-            Request = request;
-            ChaptersRange = chaptersRange;
-            PartsRange = partsRange;
-            PagesRange = pagesRange;
-        } 
+            Configuration = configuration;
+        }
         #endregion
 
         #region Public
         /// <summary>
-        /// Gets or sets id.
+        /// Gets download request configuration
         /// </summary>
-        [Required]
-        public long Id { get; }
-
-        /// <summary>
-        /// Gets download source.
-        /// </summary>
-        [Required]
-        public DownloadSource Source { get; }
-
-        /// <summary>
-        /// Gets or sets Request.
-        /// </summary>
-        [Required]
-        public string Request { get; }
-
-        /// <summary>
-        /// Gets or sets chapters range.
-        /// </summary>
-        [Required]
-        public Range ChaptersRange { get; }
-
-        /// <summary>
-        /// Gets or sets parts range.
-        /// </summary>
-        [Required]
-        public Range PartsRange { get; }
-
-        /// <summary>
-        /// Gets or sets pages range.
-        /// </summary>
-        [Required]
-        public Range PagesRange { get; } 
+        /// <returns></returns>
+        public IDownloadRequestConfiguration Configuration { get; }
         #endregion
     }
 }

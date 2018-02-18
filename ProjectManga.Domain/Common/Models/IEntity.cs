@@ -3,15 +3,15 @@ namespace ProjectManga.Domain.Common
     /// <summary>
     /// Domain entity interface.
     /// </summary>
-    /// <typeparam name="TKey">Entity key type</typeparam>
-    public interface IEntity<TKey>
-        where TKey : class
+    /// <typeparam name="TId">Entity id type</typeparam>
+    public interface IEntity<TId>
+        where TId : class
     {
         /// <summary>
-        /// Gets entity key.
+        /// Gets entity id.
         /// </summary>
         /// <returns></returns>
-         TKey Key { get; }
+         TId Id { get; }
 
         /// <summary>
         /// Gets if the entity is transient.

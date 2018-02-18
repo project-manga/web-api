@@ -7,17 +7,17 @@ namespace ProjectManga.Domain.Common
     /// A new entity shall inherith from this class
     /// in order to be processed correctly.
     /// </summary>
-    public abstract class Entity<TKey> : IEntity<TKey>
-        where TKey : class, new()
+    public abstract class Entity<TId> : IEntity<TId>
+        where TId : class
     {
         #region Constructors
         /// <summary>
         /// Constructs the entity with a key.
         /// </summary>
         /// <param name="key"></param>
-        protected Entity(TKey key)
+        protected Entity(TId id)
         {
-            Key = key ?? throw new ArgumentNullException(nameof(key));
+            Id = id ?? throw new ArgumentNullException(nameof(id));
         }
 
         /// <summary>
@@ -25,15 +25,15 @@ namespace ProjectManga.Domain.Common
         /// default key.
         /// </summary>
         protected Entity()
-            : this(new TKey())
+            : this(null)
         {
         }
         #endregion
 
         #region Public
-        public TKey Key { get; }
+        public TId Id { get; }
 
-        public bool IsTransient => Key.Equals(new TKey());
+        public bool IsTransient => Id == null;
         #endregion
     }
 }

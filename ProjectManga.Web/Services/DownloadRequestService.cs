@@ -19,20 +19,24 @@
             IDownloadRequestRepository downloadRequestRepository)
         {
             this.downloadRequestRepository = downloadRequestRepository;
-        } 
+        }
         #endregion
 
         #region Public
 #pragma warning disable CS1591
         public void CreateDownloadRequest(DownloadRequestDto downloadRequest)
         {
+            //TODO: manage "dynamic" mapping
+
             var request = new DownloadRequest(
-                0,
-                (DownloadSource)(int)downloadRequest.DownloadSource,
-                downloadRequest.Request,
-                new Range(0, 0),
-                new Range(null, null),
-                new Range(0, 0));
+                new DownloadRequestId(0),
+                new GoodMangaDownloadRequestConfiguration(
+                    "SID",
+                    new Range(0, 0),
+                    new Range(null, null),
+                    new Range(0, 0)
+                )
+            );
 
             downloadRequestRepository.Add(request);
         }
@@ -40,7 +44,7 @@
         #endregion
 
         #region Private
-        private readonly IDownloadRequestRepository downloadRequestRepository; 
+        private readonly IDownloadRequestRepository downloadRequestRepository;
         #endregion
     }
 }

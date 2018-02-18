@@ -2,7 +2,9 @@ namespace ProjectManga.Web.Controllers
 {
     using System;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Filters;
     using ProjectManga.Web.Dtos;
+    using ProjectManga.Web.Filters;
     using ProjectManga.Web.Services;
     using static HttpConstants;
 

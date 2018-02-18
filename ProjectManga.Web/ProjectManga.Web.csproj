@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectManga.Domain\ProjectManga.Domain.csproj" />
+    <ProjectReference Include="..\ProjectManga.Data\ProjectManga.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
