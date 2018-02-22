@@ -13,7 +13,7 @@ namespace ProjectManga.Data
 
         public async Task CommitAsync()
         {
-            throw new System.NotImplementedException();
+            await context.SaveChangesAsync();
         }
 
         private readonly ProjectMangaDbContext context;

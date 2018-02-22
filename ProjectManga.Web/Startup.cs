@@ -33,7 +33,7 @@
             services.AddScoped<IDownloadRequestRepository, DownloadRequestRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper();
-            services.AddDbContext<ProjectMangaDbContext>(opt => opt.UseSqlite("ProjectManga.db", b => b.MigrationsAssembly(GetType().Assembly.GetName().Name)));
+            services.AddDbContext<ProjectMangaDbContext>(opt => opt.UseSqlite("Data Source=ProjectManga.db", b => b.MigrationsAssembly(GetType().Assembly.GetName().Name)));
 
             services.AddMvc(c =>
             {

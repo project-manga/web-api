@@ -16,23 +16,26 @@
         /// <summary>
         /// Constructs the repository.
         /// </summary>
-        public DownloadRequestRepository()
+        public DownloadRequestRepository(ProjectMangaDbContext context)
         {
+            this.context = context;
         }
         #endregion
 
         #region Public
         public void Add(DownloadRequest downloadRequest)
         {
-        }
+            context.DownloadRequests.Add(downloadRequest);
+        }   
 
-        public Task<DownloadRequest> FindAsync(long id)
+        public async Task<DownloadRequest> FindAsync(long id)
         {
-            throw new NotImplementedException();
+            return await context.DownloadRequests.FindAsync(id);
         }
         #endregion
 
         #region Private
+        private readonly ProjectMangaDbContext context;
         #endregion
     }
 }
