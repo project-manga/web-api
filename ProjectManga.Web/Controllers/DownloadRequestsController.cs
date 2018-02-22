@@ -1,26 +1,37 @@
 namespace ProjectManga.Web.Controllers
 {
     using System;
+    using System.Threading.Tasks;
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
+    using ProjectManga.Domain;
     using ProjectManga.Domain.Download;
+    using ProjectManga.Domain.Download.Models;
     using ProjectManga.Web.Filters;
+    using ProjectManga.Web.Resources;
     using static HttpConstants;
 
     /// <summary>
     /// Exposes web api for scheduled downloads.
     /// </summary>
     [Route("/download-requests")]
-    public class DownloadRequestsController
+    public class DownloadRequestsController : Controller
     {
         #region Constructors
         /// <summary>
         /// Creates the controller.
         /// </summary>
+        /// <param name="mapper"></param>
+        ///  <param name="unitOfWork"></param>
         /// <param name="downloadRequestRepository">Download request repository</param>
         public DownloadRequestsController(
+            IMapper mapper,
+            IUnitOfWork unitOfWork,
             IDownloadRequestRepository downloadRequestRepository)
         {
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            this.unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             this.downloadRequestRepository = downloadRequestRepository ?? throw new ArgumentNullException(nameof(downloadRequestRepository));
         }
         #endregion
@@ -29,12 +40,24 @@ namespace ProjectManga.Web.Controllers
         /// <summary>
         /// Creates a new download request.
         /// </summary>
-        /// <param name="downloadRequest">Download request</param>
+        /// <param name="downloadRequestResource">Download request</param>
         [HttpPost]
         [Consumes(ApplicationJson)]
-        public void CreateDownloadRequest(
-            [FromBody] object downloadRequest)
+        public async Task<IActionResult> CreateDownloadRequest([FromBody] CreateDownloadRequestResource downloadRequestResource)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var downloadRequest = mapper.Map<CreateDownloadRequestResource, DownloadRequest>(downloadRequestResource);
+
+            downloadRequestRepository.Add(downloadRequest);
+            await unitOfWork.CommitAsync();
+
+            downloadRequest = await downloadRequestRepository.FindAsync(downloadRequest.Id);
+
+            return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
         }
 
         /// <summary>
@@ -43,13 +66,22 @@ namespace ProjectManga.Web.Controllers
         /// <param name="id">Download request id</param>
         [HttpGet("{id}")]
         [Consumes(ApplicationJson)]
-        public void GetDownloadRequest(int id)
+        public async Task<IActionResult> GetDownloadRequest(int id)
         {
+            var request = await downloadRequestRepository.FindAsync(id);
+            if (request == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(request));
         }
         #endregion
 
         #region Private
         private readonly IDownloadRequestRepository downloadRequestRepository;
+        private readonly IMapper mapper;
+        private readonly IUnitOfWork unitOfWork;
         #endregion
     }
 }

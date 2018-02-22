@@ -10,6 +10,7 @@
     using ProjectManga.Web.Filters;
     using Swashbuckle.AspNetCore.Swagger;
     using ProjectManga.Data.Download;
+    using AutoMapper;
 
     public class Startup
     {
@@ -27,6 +28,7 @@
             services.AddLogging();
             services.AddScoped<LoggingActionFilter>();
             services.AddScoped<IDownloadRequestRepository, DownloadRequestRepository>();
+            services.AddAutoMapper();
 
             services.AddMvc(c =>
             {

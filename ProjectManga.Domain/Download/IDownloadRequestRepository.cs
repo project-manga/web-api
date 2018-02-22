@@ -1,5 +1,6 @@
 ﻿namespace ProjectManga.Domain.Download
 {
+    using System.Threading.Tasks;
     using ProjectManga.Domain.Download.Models;
 
     /// <summary>
@@ -12,5 +13,12 @@
         /// </summary>
         /// <param name="downloadRequest"></param>
         void Add(DownloadRequest downloadRequest);
+
+        /// <summary>
+        /// Finds a download request by id.
+        /// </summary>
+        /// <param name="id">Download request id</param>
+        /// <returns></returns>
+        Task<DownloadRequest> FindAsync(long id);
     }
 }

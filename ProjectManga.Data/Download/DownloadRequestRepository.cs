@@ -1,6 +1,7 @@
 ﻿namespace ProjectManga.Data.Download
 {
     using System;
+    using System.Threading.Tasks;
     using ProjectManga.Domain;
     using ProjectManga.Domain.Download;
     using ProjectManga.Domain.Download.Models;
@@ -21,11 +22,14 @@
         #endregion
 
         #region Public
-#pragma warning disable CS1591
         public void Add(DownloadRequest downloadRequest)
         {
         }
-#pragma warning disable CS1591
+
+        public Task<DownloadRequest> FindAsync(long id)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Private
