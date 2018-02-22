@@ -1,0 +1,141 @@
+2018-02-15 17:14:12.0285 Info Message Template Auto Format enabled
+2018-02-15 17:14:12.1925 Info Adding target File Target[all]
+2018-02-15 17:14:12.2085 Info Adding target File Target[web]
+2018-02-15 17:14:12.2235 Info Adding target File Target[domain]
+2018-02-15 17:14:12.2455 Info Adding target File Target[aspnet]
+2018-02-15 17:14:12.2625 Info Adding target Null Target[blackhole]
+2018-02-15 17:14:12.2945 Info Configured from an XML element in nlog.config...
+2018-02-15 17:14:12.3185 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:14:12.3515 Info Found 99 configuration items
+2018-02-15 17:14:12.3775 Info Found 99 configuration items
+2018-02-15 17:14:12.8855 Info Message Template Auto Format enabled
+2018-02-15 17:14:12.9035 Info Found 99 configuration items
+2018-02-15 17:14:12.9215 Info Adding target File Target[all]
+2018-02-15 17:14:12.9385 Info Adding target File Target[web]
+2018-02-15 17:14:12.9555 Info Adding target File Target[domain]
+2018-02-15 17:14:12.9735 Info Adding target File Target[aspnet]
+2018-02-15 17:14:12.9925 Info Adding target Null Target[blackhole]
+2018-02-15 17:14:13.0115 Info Configured from an XML element in nlog.config...
+2018-02-15 17:14:13.0305 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:15:32.2231 Info Message Template Auto Format enabled
+2018-02-15 17:15:32.3361 Info Adding target File Target[all]
+2018-02-15 17:15:32.3531 Info Adding target File Target[web]
+2018-02-15 17:15:32.3681 Info Adding target File Target[domain]
+2018-02-15 17:15:32.3861 Info Adding target File Target[aspnet]
+2018-02-15 17:15:32.4011 Info Adding target Null Target[blackhole]
+2018-02-15 17:15:32.4231 Info Configured from an XML element in nlog.config...
+2018-02-15 17:15:32.4471 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:15:32.4741 Info Found 99 configuration items
+2018-02-15 17:15:32.5021 Info Found 99 configuration items
+2018-02-15 17:15:32.7871 Info Message Template Auto Format enabled
+2018-02-15 17:15:32.8071 Info Found 99 configuration items
+2018-02-15 17:15:32.8271 Info Adding target File Target[all]
+2018-02-15 17:15:32.8451 Info Adding target File Target[web]
+2018-02-15 17:15:32.8631 Info Adding target File Target[domain]
+2018-02-15 17:15:32.8791 Info Adding target File Target[aspnet]
+2018-02-15 17:15:32.8951 Info Adding target Null Target[blackhole]
+2018-02-15 17:15:32.9111 Info Configured from an XML element in nlog.config...
+2018-02-15 17:15:32.9281 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:20:48.9302 Info Message Template Auto Format enabled
+2018-02-15 17:20:49.0462 Info Adding target File Target[all]
+2018-02-15 17:20:49.0632 Info Adding target File Target[web]
+2018-02-15 17:20:49.0782 Info Adding target File Target[domain]
+2018-02-15 17:20:49.0952 Info Adding target File Target[aspnet]
+2018-02-15 17:20:49.1102 Info Adding target Null Target[blackhole]
+2018-02-15 17:20:49.1322 Info Configured from an XML element in nlog.config...
+2018-02-15 17:20:49.1562 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:20:49.1822 Info Found 99 configuration items
+2018-02-15 17:20:49.2102 Info Found 99 configuration items
+2018-02-15 17:20:49.4952 Info Message Template Auto Format enabled
+2018-02-15 17:20:49.5132 Info Found 99 configuration items
+2018-02-15 17:20:49.5342 Info Adding target File Target[all]
+2018-02-15 17:20:49.5542 Info Adding target File Target[web]
+2018-02-15 17:20:49.5732 Info Adding target File Target[domain]
+2018-02-15 17:20:49.5912 Info Adding target File Target[aspnet]
+2018-02-15 17:20:49.6122 Info Adding target Null Target[blackhole]
+2018-02-15 17:20:49.6342 Info Configured from an XML element in nlog.config...
+2018-02-15 17:20:49.6542 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:21:53.1288 Info Shutting down logging...
+2018-02-15 17:21:53.1808 Info Logger has been shut down.
+2018-02-15 17:22:35.8843 Info Message Template Auto Format enabled
+2018-02-15 17:22:35.9793 Info Adding target File Target[all]
+2018-02-15 17:22:35.9953 Info Adding target File Target[web]
+2018-02-15 17:22:36.0103 Info Adding target File Target[domain]
+2018-02-15 17:22:36.0263 Info Adding target File Target[aspnet]
+2018-02-15 17:22:36.0433 Info Adding target Null Target[blackhole]
+2018-02-15 17:22:36.0783 Info Configured from an XML element in nlog.config...
+2018-02-15 17:22:36.1013 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:22:36.1273 Info Found 99 configuration items
+2018-02-15 17:22:36.1543 Info Found 99 configuration items
+2018-02-15 17:22:36.4223 Info Message Template Auto Format enabled
+2018-02-15 17:22:36.4413 Info Found 99 configuration items
+2018-02-15 17:22:36.4613 Info Adding target File Target[all]
+2018-02-15 17:22:36.4813 Info Adding target File Target[web]
+2018-02-15 17:22:36.5013 Info Adding target File Target[domain]
+2018-02-15 17:22:36.5193 Info Adding target File Target[aspnet]
+2018-02-15 17:22:36.5363 Info Adding target Null Target[blackhole]
+2018-02-15 17:22:36.5533 Info Configured from an XML element in nlog.config...
+2018-02-15 17:22:36.5703 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:23:17.0186 Info Shutting down logging...
+2018-02-15 17:23:17.0736 Info Logger has been shut down.
+2018-02-15 17:25:48.6793 Info Message Template Auto Format enabled
+2018-02-15 17:25:48.7733 Info Adding target File Target[all]
+2018-02-15 17:25:48.7893 Info Adding target File Target[web]
+2018-02-15 17:25:48.8043 Info Adding target File Target[domain]
+2018-02-15 17:25:48.8253 Info Adding target File Target[aspnet]
+2018-02-15 17:25:48.8423 Info Adding target Null Target[blackhole]
+2018-02-15 17:25:48.8753 Info Configured from an XML element in nlog.config...
+2018-02-15 17:25:48.9103 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:25:48.9563 Info Found 99 configuration items
+2018-02-15 17:25:48.9823 Info Found 99 configuration items
+2018-02-15 17:25:49.6684 Info Message Template Auto Format enabled
+2018-02-15 17:25:49.6884 Info Found 99 configuration items
+2018-02-15 17:25:49.7084 Info Adding target File Target[all]
+2018-02-15 17:25:49.7274 Info Adding target File Target[web]
+2018-02-15 17:25:49.7454 Info Adding target File Target[domain]
+2018-02-15 17:25:49.7614 Info Adding target File Target[aspnet]
+2018-02-15 17:25:49.7774 Info Adding target Null Target[blackhole]
+2018-02-15 17:25:49.7924 Info Configured from an XML element in nlog.config...
+2018-02-15 17:25:49.8074 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:27:38.5336 Info Shutting down logging...
+2018-02-15 17:27:38.5866 Info Logger has been shut down.
+2018-02-15 17:28:24.7942 Info Message Template Auto Format enabled
+2018-02-15 17:28:24.9113 Info Adding target File Target[all]
+2018-02-15 17:28:24.9283 Info Adding target File Target[web]
+2018-02-15 17:28:24.9433 Info Adding target File Target[domain]
+2018-02-15 17:28:24.9643 Info Adding target File Target[aspnet]
+2018-02-15 17:28:24.9823 Info Adding target Null Target[blackhole]
+2018-02-15 17:28:25.0173 Info Configured from an XML element in nlog.config...
+2018-02-15 17:28:25.0433 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:28:25.0723 Info Found 99 configuration items
+2018-02-15 17:28:25.1023 Info Found 99 configuration items
+2018-02-15 17:28:25.3883 Info Message Template Auto Format enabled
+2018-02-15 17:28:25.4063 Info Found 99 configuration items
+2018-02-15 17:28:25.4253 Info Adding target File Target[all]
+2018-02-15 17:28:25.4443 Info Adding target File Target[web]
+2018-02-15 17:28:25.4633 Info Adding target File Target[domain]
+2018-02-15 17:28:25.5123 Info Adding target File Target[aspnet]
+2018-02-15 17:28:25.5333 Info Adding target Null Target[blackhole]
+2018-02-15 17:28:25.5543 Info Configured from an XML element in nlog.config...
+2018-02-15 17:28:25.5753 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:29:40.1796 Info Shutting down logging...
+2018-02-15 17:29:42.2367 Info Logger has been shut down.
+2018-02-15 17:30:16.7287 Info Message Template Auto Format enabled
+2018-02-15 17:30:16.8617 Info Adding target File Target[all]
+2018-02-15 17:30:16.8777 Info Adding target File Target[web]
+2018-02-15 17:30:16.8937 Info Adding target File Target[domain]
+2018-02-15 17:30:16.9107 Info Adding target File Target[aspnet]
+2018-02-15 17:30:16.9277 Info Adding target Null Target[blackhole]
+2018-02-15 17:30:16.9627 Info Configured from an XML element in nlog.config...
+2018-02-15 17:30:17.0017 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-15 17:30:17.0337 Info Found 99 configuration items
+2018-02-15 17:30:17.0717 Info Found 99 configuration items
+2018-02-15 17:30:17.4187 Info Message Template Auto Format enabled
+2018-02-15 17:30:17.4447 Info Found 99 configuration items
+2018-02-15 17:30:17.4647 Info Adding target File Target[all]
+2018-02-15 17:30:17.4827 Info Adding target File Target[web]
+2018-02-15 17:30:17.5007 Info Adding target File Target[domain]
+2018-02-15 17:30:17.5167 Info Adding target File Target[aspnet]
+2018-02-15 17:30:17.5327 Info Adding target Null Target[blackhole]
+2018-02-15 17:30:17.5487 Info Configured from an XML element in nlog.config...
+2018-02-15 17:30:17.5657 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole

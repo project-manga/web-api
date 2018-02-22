@@ -3,26 +3,25 @@ namespace ProjectManga.Web.Controllers
     using System;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
-    using ProjectManga.Web.Dtos;
+    using ProjectManga.Domain.Download;
     using ProjectManga.Web.Filters;
-    using ProjectManga.Web.Services;
     using static HttpConstants;
 
     /// <summary>
     /// Exposes web api for scheduled downloads.
     /// </summary>
-    [Route("/[controller]")]
+    [Route("/download-requests")]
     public class DownloadRequestsController
     {
         #region Constructors
         /// <summary>
         /// Creates the controller.
         /// </summary>
-        /// <param name="downloadRequestService">Download request service</param>
+        /// <param name="downloadRequestRepository">Download request repository</param>
         public DownloadRequestsController(
-            IDownloadRequestService downloadRequestService)
+            IDownloadRequestRepository downloadRequestRepository)
         {
-            this.downloadRequestService = downloadRequestService ?? throw new ArgumentNullException(nameof(downloadRequestService));
+            this.downloadRequestRepository = downloadRequestRepository ?? throw new ArgumentNullException(nameof(downloadRequestRepository));
         }
         #endregion
 
@@ -31,18 +30,26 @@ namespace ProjectManga.Web.Controllers
         /// Creates a new download request.
         /// </summary>
         /// <param name="downloadRequest">Download request</param>
-        [Route("/")]
         [HttpPost]
         [Consumes(ApplicationJson)]
         public void CreateDownloadRequest(
-            [FromBody] DownloadRequestDto downloadRequest)
+            [FromBody] object downloadRequest)
         {
-            downloadRequestService.CreateDownloadRequest(downloadRequest);
+        }
+
+        /// <summary>
+        /// Gets a download request.
+        /// </summary>
+        /// <param name="id">Download request id</param>
+        [HttpGet("{id}")]
+        [Consumes(ApplicationJson)]
+        public void GetDownloadRequest(int id)
+        {
         }
         #endregion
 
         #region Private
-        private readonly IDownloadRequestService downloadRequestService;
+        private readonly IDownloadRequestRepository downloadRequestRepository;
         #endregion
     }
 }

@@ -15,10 +15,8 @@
         /// <summary>
         /// Constructs the repository.
         /// </summary>
-        public DownloadRequestRepository(
-            IDownloadRequestGateway downloadRequestGateway)
+        public DownloadRequestRepository()
         {
-            this.downloadRequestGateway = downloadRequestGateway ?? throw new ArgumentNullException(nameof(downloadRequestGateway));
         }
         #endregion
 
@@ -26,13 +24,11 @@
 #pragma warning disable CS1591
         public void Add(DownloadRequest downloadRequest)
         {
-            downloadRequestGateway.Insert(null);
         }
 #pragma warning disable CS1591
         #endregion
 
         #region Private
-        private readonly IDownloadRequestGateway downloadRequestGateway;
         #endregion
     }
 }

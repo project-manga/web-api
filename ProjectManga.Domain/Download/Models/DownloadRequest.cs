@@ -1,35 +1,43 @@
-﻿namespace ProjectManga.Domain.Download.Models
+using ProjectManga.Domain.Common;
+
+namespace ProjectManga.Domain.Download.Models
 {
-    using ProjectManga.Domain.Common;
-    using ProjectManga.Domain.Download.Vos;
-    using System.ComponentModel.DataAnnotations;
-
-    /// <summary>
-    /// Represents a download request model entity (aggregate root)
-    /// </summary>
-    public class DownloadRequest : Entity<DownloadRequestId>
+    public class DownloadRequest : Entity<long>
     {
-        #region Constructors
         /// <summary>
-        /// Creates download request.
+        /// Gets from chapter value.
         /// </summary>
-        /// <param name="id">Download request id</param>
-        /// <param name="configuration">Download request configuration</param>
-        public DownloadRequest(
-            DownloadRequestId id,
-            IDownloadRequestConfiguration configuration)
-            : base(id)
-        {
-            Configuration = configuration;
-        }
-        #endregion
+        public int? FromChapter { get; }
 
-        #region Public
         /// <summary>
-        /// Gets download request configuration
+        /// Gets or sets to chapter value.
+        /// </summary>
+        public int? ToChapter { get; set; }
+
+        /// <summary>
+        /// Gets or sets from chapter part value.
+        /// </summary>
+        public int? FromChapterPart { get; set; }
+
+        /// <summary>
+        /// Gets or sets to chapter part value.
+        /// </summary>
+        public int? ToChapterPart { get; set; }
+
+        /// <summary>
+        /// Gets or sets from page value.
+        /// </summary>
+        public int? FromPage { get; set; }
+
+        /// <summary>
+        /// Gets or sets to page value.
+        /// </summary>
+        public int? ToPage { get; set; }
+
+        /// <summary>
+        /// Gets or sets sid value.
         /// </summary>
         /// <returns></returns>
-        public IDownloadRequestConfiguration Configuration { get; }
-        #endregion
+        public string Sid { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 namespace ProjectManga.Domain.Common
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Represents base class for entities.
@@ -8,7 +9,6 @@ namespace ProjectManga.Domain.Common
     /// in order to be processed correctly.
     /// </summary>
     public abstract class Entity<TId> : IEntity<TId>
-        where TId : class
     {
         #region Constructors
         /// <summary>
@@ -17,7 +17,7 @@ namespace ProjectManga.Domain.Common
         /// <param name="key"></param>
         protected Entity(TId id)
         {
-            Id = id ?? throw new ArgumentNullException(nameof(id));
+            Id = id;
         }
 
         /// <summary>
@@ -25,15 +25,14 @@ namespace ProjectManga.Domain.Common
         /// default key.
         /// </summary>
         protected Entity()
-            : this(null)
+            : this(default(TId))
         {
         }
         #endregion
 
         #region Public
-        public TId Id { get; }
-
-        public bool IsTransient => Id == null;
+        [Key]
+        public TId Id { get; set; }
         #endregion
     }
 }
