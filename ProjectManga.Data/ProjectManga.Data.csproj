@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ProjectManga.Domain\ProjectManga.Domain.csproj" />
   </ItemGroup>
 
