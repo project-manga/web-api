@@ -11,6 +11,9 @@
     using Swashbuckle.AspNetCore.Swagger;
     using ProjectManga.Data.Download;
     using AutoMapper;
+    using ProjectManga.Data;
+    using ProjectManga.Domain;
+    using Microsoft.EntityFrameworkCore;
 
     public class Startup
     {
@@ -28,7 +31,9 @@
             services.AddLogging();
             services.AddScoped<LoggingActionFilter>();
             services.AddScoped<IDownloadRequestRepository, DownloadRequestRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper();
+            services.AddDbContext<ProjectMangaDbContext>(opt => opt.UseSqlite("ProjectManga.db", b => b.MigrationsAssembly(GetType().Assembly.GetName().Name)));
 
             services.AddMvc(c =>
             {

@@ -2,8 +2,16 @@ namespace ProjectManga.Web.Resources
 {
     public class DownloadRequestResource
     {
+        /// <summary>
+        /// Gets or sets download request resource id.
+        /// </summary>
+        /// <returns></returns>
         public long Id { get; set; }
         
+        /// <summary>
+        /// Gets or sets from chapter value.
+        /// </summary>
+        /// <returns></returns>
         public int? FromChapter { get; }
 
         /// <summary>

@@ -139,3 +139,156 @@
 2018-02-15 17:30:17.5327 Info Adding target Null Target[blackhole]
 2018-02-15 17:30:17.5487 Info Configured from an XML element in nlog.config...
 2018-02-15 17:30:17.5657 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:42:06.7834 Info Message Template Auto Format enabled
+2018-02-22 16:42:06.8764 Info Adding target File Target[all]
+2018-02-22 16:42:06.8924 Info Adding target File Target[web]
+2018-02-22 16:42:06.9074 Info Adding target File Target[domain]
+2018-02-22 16:42:06.9244 Info Adding target File Target[aspnet]
+2018-02-22 16:42:06.9394 Info Adding target Null Target[blackhole]
+2018-02-22 16:42:06.9624 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:42:06.9854 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:42:07.0344 Info Found 99 configuration items
+2018-02-22 16:42:07.0634 Info Configuration initialized.
+2018-02-22 16:42:07.0824 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 16:42:07.0984 Info Message Template Auto Format enabled
+2018-02-22 16:42:07.1144 Info Found 99 configuration items
+2018-02-22 16:42:07.1314 Info Adding target File Target[all]
+2018-02-22 16:42:07.1504 Info Adding target File Target[web]
+2018-02-22 16:42:07.1684 Info Adding target File Target[domain]
+2018-02-22 16:42:07.1864 Info Adding target File Target[aspnet]
+2018-02-22 16:42:07.2034 Info Adding target Null Target[blackhole]
+2018-02-22 16:42:07.2234 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:42:07.2434 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:42:07.4724 Info Shutting down logging...
+2018-02-22 16:42:07.5154 Info Logger has been shut down.
+2018-02-22 16:43:56.9297 Info Message Template Auto Format enabled
+2018-02-22 16:43:57.0227 Info Adding target File Target[all]
+2018-02-22 16:43:57.0377 Info Adding target File Target[web]
+2018-02-22 16:43:57.0527 Info Adding target File Target[domain]
+2018-02-22 16:43:57.0687 Info Adding target File Target[aspnet]
+2018-02-22 16:43:57.0837 Info Adding target Null Target[blackhole]
+2018-02-22 16:43:57.1067 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:43:57.1307 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:43:57.1757 Info Found 99 configuration items
+2018-02-22 16:43:57.2027 Info Configuration initialized.
+2018-02-22 16:43:57.2217 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 16:43:57.2377 Info Message Template Auto Format enabled
+2018-02-22 16:43:57.2527 Info Found 99 configuration items
+2018-02-22 16:43:57.2697 Info Adding target File Target[all]
+2018-02-22 16:43:57.2877 Info Adding target File Target[web]
+2018-02-22 16:43:57.3067 Info Adding target File Target[domain]
+2018-02-22 16:43:57.3247 Info Adding target File Target[aspnet]
+2018-02-22 16:43:57.3417 Info Adding target Null Target[blackhole]
+2018-02-22 16:43:57.3617 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:43:57.3817 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:43:57.9127 Info Shutting down logging...
+2018-02-22 16:43:57.9567 Info Logger has been shut down.
+2018-02-22 16:47:06.9885 Info Message Template Auto Format enabled
+2018-02-22 16:47:07.1275 Info Adding target File Target[all]
+2018-02-22 16:47:07.1445 Info Adding target File Target[web]
+2018-02-22 16:47:07.1595 Info Adding target File Target[domain]
+2018-02-22 16:47:07.1775 Info Adding target File Target[aspnet]
+2018-02-22 16:47:07.1935 Info Adding target Null Target[blackhole]
+2018-02-22 16:47:07.2205 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:47:07.2615 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:47:07.3045 Info Found 99 configuration items
+2018-02-22 16:47:07.3385 Info Configuration initialized.
+2018-02-22 16:47:07.3585 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 16:47:07.3756 Info Message Template Auto Format enabled
+2018-02-22 16:47:07.3926 Info Found 99 configuration items
+2018-02-22 16:47:07.4106 Info Adding target File Target[all]
+2018-02-22 16:47:07.4286 Info Adding target File Target[web]
+2018-02-22 16:47:07.4486 Info Adding target File Target[domain]
+2018-02-22 16:47:07.4676 Info Adding target File Target[aspnet]
+2018-02-22 16:47:07.4846 Info Adding target Null Target[blackhole]
+2018-02-22 16:47:07.5046 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:47:07.5246 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:47:08.1776 Info Shutting down logging...
+2018-02-22 16:47:08.2216 Info Logger has been shut down.
+2018-02-22 16:50:23.6898 Info Message Template Auto Format enabled
+2018-02-22 16:50:23.7538 Info Adding target File Target[all]
+2018-02-22 16:50:23.7698 Info Adding target File Target[web]
+2018-02-22 16:50:23.7698 Info Adding target File Target[domain]
+2018-02-22 16:50:23.7998 Info Adding target File Target[aspnet]
+2018-02-22 16:50:23.8168 Info Adding target Null Target[blackhole]
+2018-02-22 16:50:23.8508 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:50:23.8858 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:50:23.9408 Info Found 99 configuration items
+2018-02-22 16:50:23.9698 Info Configuration initialized.
+2018-02-22 16:50:23.9888 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 16:50:24.0058 Info Message Template Auto Format enabled
+2018-02-22 16:50:24.0528 Info Found 99 configuration items
+2018-02-22 16:50:24.0748 Info Adding target File Target[all]
+2018-02-22 16:50:24.0958 Info Adding target File Target[web]
+2018-02-22 16:50:24.1158 Info Adding target File Target[domain]
+2018-02-22 16:50:24.1348 Info Adding target File Target[aspnet]
+2018-02-22 16:50:24.1568 Info Adding target Null Target[blackhole]
+2018-02-22 16:50:24.1788 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 16:50:24.1988 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 16:50:24.7148 Info Shutting down logging...
+2018-02-22 16:50:24.7618 Info Logger has been shut down.
+2018-02-22 17:08:57.3045 Info Message Template Auto Format enabled
+2018-02-22 17:08:57.4145 Info Adding target File Target[all]
+2018-02-22 17:08:57.4315 Info Adding target File Target[web]
+2018-02-22 17:08:57.4465 Info Adding target File Target[domain]
+2018-02-22 17:08:57.4635 Info Adding target File Target[aspnet]
+2018-02-22 17:08:57.4785 Info Adding target Null Target[blackhole]
+2018-02-22 17:08:57.4995 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 17:08:57.5235 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:08:57.5535 Info Found 99 configuration items
+2018-02-22 17:08:57.5795 Info Configuration initialized.
+2018-02-22 17:08:57.5985 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 17:08:57.6145 Info Message Template Auto Format enabled
+2018-02-22 17:08:57.6305 Info Found 99 configuration items
+2018-02-22 17:08:57.6495 Info Adding target File Target[all]
+2018-02-22 17:08:57.6685 Info Adding target File Target[web]
+2018-02-22 17:08:57.6865 Info Adding target File Target[domain]
+2018-02-22 17:08:57.7045 Info Adding target File Target[aspnet]
+2018-02-22 17:08:57.7195 Info Adding target Null Target[blackhole]
+2018-02-22 17:08:57.7345 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 17:08:57.7505 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:08:58.2365 Info Shutting down logging...
+2018-02-22 17:08:58.2775 Info Logger has been shut down.
+2018-02-22 17:12:21.9352 Info Message Template Auto Format enabled
+2018-02-22 17:12:22.0212 Info Adding target File Target[all]
+2018-02-22 17:12:22.0372 Info Adding target File Target[web]
+2018-02-22 17:12:22.0522 Info Adding target File Target[domain]
+2018-02-22 17:12:22.0692 Info Adding target File Target[aspnet]
+2018-02-22 17:12:22.0842 Info Adding target Null Target[blackhole]
+2018-02-22 17:12:22.1062 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 17:12:22.1292 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:12:22.1592 Info Found 99 configuration items
+2018-02-22 17:12:22.1852 Info Configuration initialized.
+2018-02-22 17:12:22.2112 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.0.6749. Product version: 4.5.0-rc02.
+2018-02-22 17:12:22.2272 Info Message Template Auto Format enabled
+2018-02-22 17:12:22.2432 Info Found 99 configuration items
+2018-02-22 17:12:22.2622 Info Adding target File Target[all]
+2018-02-22 17:12:22.2832 Info Adding target File Target[web]
+2018-02-22 17:12:22.3032 Info Adding target File Target[domain]
+2018-02-22 17:12:22.3242 Info Adding target File Target[aspnet]
+2018-02-22 17:12:22.3442 Info Adding target Null Target[blackhole]
+2018-02-22 17:12:22.3652 Info Configured from an XML element in H:\dev\project-manga\web-api\ProjectManga.Web\bin\Debug\netcoreapp2.0\NLog.config...
+2018-02-22 17:12:22.3872 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:12:23.1012 Info Shutting down logging...
+2018-02-22 17:12:23.1382 Info Logger has been shut down.
+2018-02-22 17:13:17.5824 Info Message Template Auto Format enabled
+2018-02-22 17:13:17.6794 Info Adding target File Target[all]
+2018-02-22 17:13:17.6944 Info Adding target File Target[web]
+2018-02-22 17:13:17.7104 Info Adding target File Target[domain]
+2018-02-22 17:13:17.7284 Info Adding target File Target[aspnet]
+2018-02-22 17:13:17.7454 Info Adding target Null Target[blackhole]
+2018-02-22 17:13:17.7874 Info Configured from an XML element in nlog.config...
+2018-02-22 17:13:17.8274 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:13:17.8804 Info Found 99 configuration items
+2018-02-22 17:13:17.9144 Info Found 99 configuration items
+2018-02-22 17:13:20.0185 Info Message Template Auto Format enabled
+2018-02-22 17:13:20.0585 Info Found 99 configuration items
+2018-02-22 17:13:20.0765 Info Adding target File Target[all]
+2018-02-22 17:13:20.0975 Info Adding target File Target[web]
+2018-02-22 17:13:20.1165 Info Adding target File Target[domain]
+2018-02-22 17:13:20.1375 Info Adding target File Target[aspnet]
+2018-02-22 17:13:20.1565 Info Adding target Null Target[blackhole]
+2018-02-22 17:13:20.1785 Info Configured from an XML element in nlog.config...
+2018-02-22 17:13:20.2015 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: blackhole
+2018-02-22 17:14:13.3976 Info Shutting down logging...
+2018-02-22 17:14:13.4436 Info Logger has been shut down.
