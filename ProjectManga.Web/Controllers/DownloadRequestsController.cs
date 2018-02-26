@@ -46,7 +46,6 @@ namespace ProjectManga.Web.Controllers
         /// <param name="downloadRequestResource">Download request</param>
         [HttpPost]
         [Consumes(ApplicationJson)]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateDownloadRequest([FromBody] SaveDownloadRequestResource downloadRequestResource)
         {
             if (!ModelState.IsValid)
@@ -88,7 +87,6 @@ namespace ProjectManga.Web.Controllers
         /// <param name="downloadRequestResource">Download request</param>
         [HttpPut("{id}")]
         [Consumes(ApplicationJson)]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateDownloadRequest(
             int id,
             [FromBody] SaveDownloadRequestResource downloadRequestResource)
@@ -118,7 +116,7 @@ namespace ProjectManga.Web.Controllers
             int? page,
             int? pageSize,
             bool? sortAsc,
-            string sortField = "id")
+            string sortField)
         {
             var downloadRequests = await downloadRequestRepository.FindAllAsync(new DownloadRequestFilter
             {

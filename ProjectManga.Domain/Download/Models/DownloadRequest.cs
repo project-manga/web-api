@@ -6,9 +6,9 @@ namespace ProjectManga.Domain.Download.Models
     public class DownloadRequest : Entity<long>
     {
         /// <summary>
-        /// Gets from chapter value.
+        /// Gets or sets from chapter value.
         /// </summary>
-        public int? FromChapter { get; }
+        public int? FromChapter { get; set; }
 
         /// <summary>
         /// Gets or sets to chapter value.

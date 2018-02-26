@@ -23,11 +23,14 @@ namespace ProjectManga.Web.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("FromChapter");
+
                     b.Property<int?>("FromChapterPart");
 
                     b.Property<int?>("FromPage");
 
-                    b.Property<string>("Sid");
+                    b.Property<string>("Sid")
+                        .HasMaxLength(255);
 
                     b.Property<int?>("ToChapter");
 

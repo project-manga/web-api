@@ -12,7 +12,7 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets from chapter value.
         /// </summary>
         /// <returns></returns>
-        public int? FromChapter { get; }
+        public int? FromChapter { get; set; }
 
         /// <summary>
         /// Gets or sets to chapter value.
@@ -38,5 +38,10 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets to page value.
         /// </summary>
         public int? ToPage { get; set; }
+
+        /// <summary>
+        /// Gets or sets to sid value.
+        /// </summary>
+        public string Sid { get; set; }
     }
 }

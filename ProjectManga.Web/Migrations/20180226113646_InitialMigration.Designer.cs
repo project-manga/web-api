@@ -10,7 +10,7 @@ using System;
 namespace ProjectManga.Web.Migrations
 {
     [DbContext(typeof(ProjectMangaDbContext))]
-    [Migration("20180222161222_InitialMigration")]
+    [Migration("20180226113646_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,11 +24,14 @@ namespace ProjectManga.Web.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("FromChapter");
+
                     b.Property<int?>("FromChapterPart");
 
                     b.Property<int?>("FromPage");
 
-                    b.Property<string>("Sid");
+                    b.Property<string>("Sid")
+                        .HasMaxLength(255);
 
                     b.Property<int?>("ToChapter");
 
