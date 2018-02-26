@@ -35,6 +35,6 @@
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestFilter filter);
+        Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestQuery filter);
     }
 }

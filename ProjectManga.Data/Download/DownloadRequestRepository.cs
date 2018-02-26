@@ -45,7 +45,7 @@
             return await context.DownloadRequests.ToListAsync();
         }
 
-        public async Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestFilter filter)
+        public async Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestQuery filter)
         {
             var query = context.DownloadRequests.AsQueryable();
 

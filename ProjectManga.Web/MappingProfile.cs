@@ -15,12 +15,10 @@ namespace ProjectManga.Web
 
             CreateMap<DownloadRequest, SaveDownloadRequestResource>();
             CreateMap<QueryResult<DownloadRequest>, QueryResultResource<DownloadRequestResource>>();
-                // .ForMember(x => x.Items, opt => opt.MapFrom(p => p.Items.Select(i => new DownloadRequestResource { })));
-
-            //    .ForMember(d => d.Items, opt => opt.MapFrom(s => s.Items.Select(i => )))
 
             // From resource to domain
             CreateMap<SaveDownloadRequestResource, DownloadRequest>();
+            CreateMap<DownloadRequestQueryResource, DownloadRequestQuery>();
 
         }
     }

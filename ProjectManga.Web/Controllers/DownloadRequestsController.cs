@@ -110,23 +110,10 @@ namespace ProjectManga.Web.Controllers
         /// </summary>
         [HttpGet]
         [Consumes(ApplicationJson)]
-        public async Task<IActionResult> GetDownloadRequests(
-            string text,
-            string source,
-            int? page,
-            int? pageSize,
-            bool? sortAsc,
-            string sortField)
+        public async Task<IActionResult> GetDownloadRequests(DownloadRequestQueryResource query)
         {
-            var downloadRequests = await downloadRequestRepository.FindAllAsync(new DownloadRequestFilter
-            {
-                Text = text,
-                Source = source,
-                Page = page ?? 1,
-                PageSize = pageSize ?? 20,
-                SortBy = sortField,
-                IsSortAscending  = sortAsc ?? true
-            });
+            var downloadRequests = await downloadRequestRepository.FindAllAsync(
+                mapper.Map<DownloadRequestQueryResource, DownloadRequestQuery>(query));
 
             return Ok(mapper.Map<QueryResult<DownloadRequest>, QueryResultResource<DownloadRequestResource>>(downloadRequests));
         }
