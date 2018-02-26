@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ProjectManga.Data;
 using System;
 
 namespace ProjectManga.Web.Migrations
 {
     [DbContext(typeof(ProjectMangaDbContext))]
-    [Migration("20180226113646_InitialMigration")]
+    [Migration("20180226162618_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,11 +25,24 @@ namespace ProjectManga.Web.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("CreationDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("DATETIME()");
+
                     b.Property<int?>("FromChapter");
 
                     b.Property<int?>("FromChapterPart");
 
                     b.Property<int?>("FromPage");
+
+                    b.Property<DateTime>("ModificationDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
+
+                    b.Property<DateTime>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
 
                     b.Property<string>("Sid")
                         .HasMaxLength(255);

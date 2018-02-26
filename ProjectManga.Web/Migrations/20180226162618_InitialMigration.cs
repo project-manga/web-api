@@ -14,9 +14,12 @@ namespace ProjectManga.Web.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    CreationDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "DATETIME()"),
                     FromChapter = table.Column<int>(nullable: true),
                     FromChapterPart = table.Column<int>(nullable: true),
                     FromPage = table.Column<int>(nullable: true),
+                    ModificationDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "DATETIME()"),
+                    RowVersion = table.Column<DateTime>(nullable: false, defaultValueSql: "DATETIME()"),
                     Sid = table.Column<string>(maxLength: 255, nullable: true),
                     ToChapter = table.Column<int>(nullable: true),
                     ToChapterPart = table.Column<int>(nullable: true),

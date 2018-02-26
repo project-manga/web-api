@@ -1,5 +1,7 @@
 namespace ProjectManga.Web.Resources
 {
+    using System;
+
     public class DownloadRequestResource
     {
         /// <summary>
@@ -7,7 +9,7 @@ namespace ProjectManga.Web.Resources
         /// </summary>
         /// <returns></returns>
         public long Id { get; set; }
-        
+
         /// <summary>
         /// Gets or sets from chapter value.
         /// </summary>
@@ -43,5 +45,17 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets to sid value.
         /// </summary>
         public string Sid { get; set; }
+
+        /// <summary>
+        /// Gets or sets creation date/time
+        /// </summary>
+        /// <returns></returns>
+        public DateTime CreatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets modification date/time
+        /// </summary>
+        /// <returns></returns>
+        public DateTime ModifiedOn { get; set; }
     }
 }

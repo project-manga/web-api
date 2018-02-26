@@ -33,6 +33,12 @@ namespace ProjectManga.Domain.Common
         #region Public
         [Key]
         public TId Id { get; set; }
+
+        public DateTime CreationDateTime { get; set; }
+
+        public DateTime ModificationDateTime { get; set; }
+
+        public DateTime RowVersion { get; set; }
         #endregion
     }
 }

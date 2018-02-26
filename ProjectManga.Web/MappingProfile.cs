@@ -11,7 +11,9 @@ namespace ProjectManga.Web
         public MappingProfile()
         {
             // From domain to resource
-            CreateMap<DownloadRequest, DownloadRequestResource>();
+            CreateMap<DownloadRequest, DownloadRequestResource>()
+                .ForMember(drr => drr.CreatedOn, opt => opt.MapFrom(dr => dr.CreationDateTime))
+                .ForMember(drr => drr.ModifiedOn, opt => opt.MapFrom(dr => dr.ModificationDateTime));
 
             CreateMap<DownloadRequest, SaveDownloadRequestResource>();
             CreateMap<QueryResult<DownloadRequest>, QueryResultResource<DownloadRequestResource>>();

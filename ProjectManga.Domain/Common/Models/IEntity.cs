@@ -1,5 +1,7 @@
 namespace ProjectManga.Domain.Common
 {
+    using System;
+
     /// <summary>
     /// Domain entity interface.
     /// </summary>
@@ -10,6 +12,12 @@ namespace ProjectManga.Domain.Common
         /// Gets entity id.
         /// </summary>
         /// <returns></returns>
-         TId Id { get; }
+        TId Id { get; }
+
+        DateTime CreationDateTime { get; set; }
+
+        DateTime ModificationDateTime { get; set; }
+
+        DateTime RowVersion { get; set; }
     }
 }

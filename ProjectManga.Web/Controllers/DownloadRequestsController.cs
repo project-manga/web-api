@@ -98,8 +98,6 @@ namespace ProjectManga.Web.Controllers
             }
 
             mapper.Map(downloadRequestResource, downloadRequest);
-
-            downloadRequestRepository.Add(downloadRequest);
             await unitOfWork.CommitAsync();
 
             return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));

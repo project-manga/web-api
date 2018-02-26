@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ProjectManga.Data;
 using System;
 
@@ -23,11 +24,24 @@ namespace ProjectManga.Web.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("CreationDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("DATETIME()");
+
                     b.Property<int?>("FromChapter");
 
                     b.Property<int?>("FromChapterPart");
 
                     b.Property<int?>("FromPage");
+
+                    b.Property<DateTime>("ModificationDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
+
+                    b.Property<DateTime>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
 
                     b.Property<string>("Sid")
                         .HasMaxLength(255);
