@@ -1,7 +1,8 @@
-using ProjectManga.Domain.Common;
-
 namespace ProjectManga.Domain.Download.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using ProjectManga.Domain.Common;
+
     public class DownloadRequest : Entity<long>
     {
         /// <summary>
@@ -38,6 +39,7 @@ namespace ProjectManga.Domain.Download.Models
         /// Gets or sets sid value.
         /// </summary>
         /// <returns></returns>
+        [StringLength(255)]
         public string Sid { get; set; }
     }
 }

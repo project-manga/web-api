@@ -1,9 +1,13 @@
 namespace ProjectManga.Web.Resources
 {
-    public class CreateDownloadRequestResource
-    {        
-        public long Id { get; set; }
-        
+    using System.ComponentModel.DataAnnotations;
+
+    public class SaveDownloadRequestResource
+    {                
+        /// <summary>
+        /// Gets or sets from chapter value.
+        /// </summary>
+        /// <returns></returns>
         public int? FromChapter { get; }
 
         /// <summary>
@@ -22,7 +26,7 @@ namespace ProjectManga.Web.Resources
         public int? ToChapterPart { get; set; }
 
         /// <summary>
-        /// Gets or sets from page value.
+        /// /// Gets or sets from page value.
         /// </summary>
         public int? FromPage { get; set; }
 
@@ -30,5 +34,13 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets to page value.
         /// </summary>
         public int? ToPage { get; set; }
+
+        /// <summary>
+        /// Gets or sets sid value.
+        /// </summary>
+        /// <returns></returns>
+        [Required]
+        [StringLength(255)]
+        public string Sid { get; set; }
     }
 }

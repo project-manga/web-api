@@ -1,13 +1,16 @@
 namespace ProjectManga.Web.Controllers
 {
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
     using ProjectManga.Domain;
+    using ProjectManga.Domain.Common.Vos;
     using ProjectManga.Domain.Download;
     using ProjectManga.Domain.Download.Models;
+    using ProjectManga.Domain.Download.Vos;
     using ProjectManga.Web.Filters;
     using ProjectManga.Web.Resources;
     using static HttpConstants;
@@ -43,14 +46,15 @@ namespace ProjectManga.Web.Controllers
         /// <param name="downloadRequestResource">Download request</param>
         [HttpPost]
         [Consumes(ApplicationJson)]
-        public async Task<IActionResult> CreateDownloadRequest([FromBody] CreateDownloadRequestResource downloadRequestResource)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDownloadRequest([FromBody] SaveDownloadRequestResource downloadRequestResource)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var downloadRequest = mapper.Map<CreateDownloadRequestResource, DownloadRequest>(downloadRequestResource);
+            var downloadRequest = mapper.Map<SaveDownloadRequestResource, DownloadRequest>(downloadRequestResource);
 
             downloadRequestRepository.Add(downloadRequest);
             await unitOfWork.CommitAsync();
@@ -75,6 +79,58 @@ namespace ProjectManga.Web.Controllers
             }
 
             return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(request));
+        }
+
+        /// <summary>
+        /// Updates a download request.
+        /// </summary>
+        /// <param name="id">Download request id</param>
+        /// <param name="downloadRequestResource">Download request</param>
+        [HttpPut("{id}")]
+        [Consumes(ApplicationJson)]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateDownloadRequest(
+            int id,
+            [FromBody] SaveDownloadRequestResource downloadRequestResource)
+        {
+            var downloadRequest = await downloadRequestRepository.FindAsync(id);
+            if (downloadRequest == null)
+            {
+                return NotFound();
+            }
+
+            mapper.Map(downloadRequestResource, downloadRequest);
+
+            downloadRequestRepository.Add(downloadRequest);
+            await unitOfWork.CommitAsync();
+
+            return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
+        }
+
+        /// <summary>
+        /// Gets all download requests.
+        /// </summary>
+        [HttpGet]
+        [Consumes(ApplicationJson)]
+        public async Task<IActionResult> GetDownloadRequests(
+            string text,
+            string source,
+            int? page,
+            int? pageSize,
+            bool? sortAsc,
+            string sortField = "id")
+        {
+            var downloadRequests = await downloadRequestRepository.FindAllAsync(new DownloadRequestFilter
+            {
+                Text = text,
+                Source = source,
+                Page = page ?? 1,
+                PageSize = pageSize ?? 20,
+                SortBy = sortField,
+                IsSortAscending  = sortAsc ?? true
+            });
+
+            return Ok(mapper.Map<QueryResult<DownloadRequest>, QueryResultResource<DownloadRequestResource>>(downloadRequests));
         }
         #endregion
 

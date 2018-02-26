@@ -1,10 +1,17 @@
 ﻿namespace ProjectManga.Data.Download
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
     using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+    using ProjectManga.Data.Common;
     using ProjectManga.Domain;
+    using ProjectManga.Domain.Common.Vos;
     using ProjectManga.Domain.Download;
     using ProjectManga.Domain.Download.Models;
+    using ProjectManga.Domain.Download.Vos;
 
     /// <summary>
     /// Mediates between the download request domain and its data mapping using 
@@ -26,11 +33,72 @@
         public void Add(DownloadRequest downloadRequest)
         {
             context.DownloadRequests.Add(downloadRequest);
-        }   
+        }
 
         public async Task<DownloadRequest> FindAsync(long id)
         {
             return await context.DownloadRequests.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<DownloadRequest>> FindAllAsync()
+        {
+            return await context.DownloadRequests.ToListAsync();
+        }
+
+        public async Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestFilter filter)
+        {
+            var query = context.DownloadRequests.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(filter.Source))
+            {
+                // filter by source
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.Text))
+            {
+                // filter full text
+            }
+
+            var count = await query.CountAsync();
+            if (count == 0)
+            {
+                return new QueryResult<DownloadRequest>
+                {
+                    Items = Enumerable.Empty<DownloadRequest>(),
+                    Page = 1,
+                    PageSize = filter.PageSize,
+                    SortBy = filter.SortBy,
+                    IsSortAscending = filter.IsSortAscending
+                };
+            }
+
+            var columnsMap = new Dictionary<string, Expression<Func<DownloadRequest, object>>>()
+            {
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromChapter,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToChapter,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromChapterPart,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToChapterPart,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromPage,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToPage,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.Id,
+                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.Sid
+            };
+
+            query = query.ApplyOrdering(filter, columnsMap);
+
+            query = query.ApplyPaging(filter);
+
+            var result = await query.ToListAsync();
+
+            return new QueryResult<DownloadRequest>
+            {
+                Items = result,
+                Page = filter.Page,
+                PageSize = filter.PageSize,
+                SortBy = filter.SortBy,
+                IsSortAscending = filter.IsSortAscending,
+                Total = count
+            };
         }
         #endregion
 

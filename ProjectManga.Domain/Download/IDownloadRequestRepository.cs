@@ -1,7 +1,10 @@
 ﻿namespace ProjectManga.Domain.Download
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using ProjectManga.Domain.Download.Models;
+    using Models;
+    using Common.Vos;
+    using Vos;
 
     /// <summary>
     /// Download request model repository
@@ -20,5 +23,18 @@
         /// <param name="id">Download request id</param>
         /// <returns></returns>
         Task<DownloadRequest> FindAsync(long id);
+
+        /// <summary>
+        /// Finds all download requests.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<DownloadRequest>> FindAllAsync();
+
+        /// <summary>
+        /// Searches for download requests.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestFilter filter);
     }
 }
