@@ -57,6 +57,8 @@
             if (!string.IsNullOrWhiteSpace(filter.Text))
             {
                 // filter full text
+                var toLower = filter.Text.ToLower();
+                query = query.Where(dr => dr.Sid.ToLower().Contains(toLower));
             }
 
             var count = await query.CountAsync();
@@ -75,13 +77,13 @@
             var columnsMap = new Dictionary<string, Expression<Func<DownloadRequest, object>>>()
             {
                 [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromChapter,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToChapter,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromChapterPart,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToChapterPart,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.FromPage,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.ToPage,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.Id,
-                [nameof(DownloadRequest.FromChapter).ToLower()] = dr => dr.Sid
+                [nameof(DownloadRequest.ToChapter).ToLower()] = dr => dr.ToChapter,
+                [nameof(DownloadRequest.FromChapterPart).ToLower()] = dr => dr.FromChapterPart,
+                [nameof(DownloadRequest.ToChapterPart).ToLower()] = dr => dr.ToChapterPart,
+                [nameof(DownloadRequest.FromPage).ToLower()] = dr => dr.FromPage,
+                [nameof(DownloadRequest.ToPage).ToLower()] = dr => dr.ToPage,
+                [nameof(DownloadRequest.Id).ToLower()] = dr => dr.Id,
+                [nameof(DownloadRequest.Sid).ToLower()] = dr => dr.Sid
             };
 
             query = query.ApplyOrdering(filter, columnsMap);
