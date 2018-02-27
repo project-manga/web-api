@@ -39,7 +39,8 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets source id.
         /// </summary>
         /// <returns></returns>
-        public int SourceId { get; set; }
+        [Required]
+        public int? SourceId { get; set; }
 
         /// <summary>
         /// Gets or sets sid value.
