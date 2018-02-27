@@ -67,7 +67,7 @@ namespace ProjectManga.Web.Controllers
         /// <param name="id">Download request id</param>
         [HttpGet("{id}")]
         [Consumes(ApplicationJson)]
-        public async Task<IActionResult> GetDownloadRequest(int id)
+        public async Task<IActionResult> GetDownloadRequest(long id)
         {
             var request = await downloadRequestRepository.FindAsync(id);
             if (request == null)
@@ -86,7 +86,7 @@ namespace ProjectManga.Web.Controllers
         [HttpPut("{id}")]
         [Consumes(ApplicationJson)]
         public async Task<IActionResult> UpdateDownloadRequest(
-            int id,
+            long id,
             [FromBody] SaveDownloadRequestResource downloadRequestResource)
         {
             var downloadRequest = await downloadRequestRepository.FindAsync(id);
@@ -99,6 +99,26 @@ namespace ProjectManga.Web.Controllers
             await unitOfWork.CommitAsync();
 
             return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
+        }
+
+        /// <summary>
+        /// Deletes a download request.
+        /// </summary>
+        /// <param name="id">Download request id</param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(long id) 
+        {
+            var downloadRequest = await downloadRequestRepository.FindAsync(id);
+            if (downloadRequest == null)
+            {
+                return NotFound();
+            }
+
+            downloadRequestRepository.Remove(downloadRequest);
+            await unitOfWork.CommitAsync();
+
+            return NoContent();
         }
 
         /// <summary>

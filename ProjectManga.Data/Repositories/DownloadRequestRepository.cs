@@ -33,6 +33,11 @@
             context.DownloadRequests.Add(downloadRequest);
         }
 
+        public void Remove(DownloadRequest downloadRequest)
+        {
+            context.DownloadRequests.Remove(downloadRequest);
+        }
+
         public async Task<DownloadRequest> FindAsync(long id)
         {
             return await context.DownloadRequests.FindAsync(id);

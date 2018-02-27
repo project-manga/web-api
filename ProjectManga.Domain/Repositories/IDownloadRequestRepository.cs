@@ -17,6 +17,12 @@
         void Add(DownloadRequest downloadRequest);
 
         /// <summary>
+        /// Removes download request.
+        /// </summary>
+        /// <param name="downloadRequest"></param>
+        void Remove(DownloadRequest downloadRequest);
+
+        /// <summary>
         /// Finds a download request by id.
         /// </summary>
         /// <param name="id">Download request id</param>
