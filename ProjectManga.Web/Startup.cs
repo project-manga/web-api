@@ -9,7 +9,7 @@
     using ProjectManga.Domain.Download;
     using ProjectManga.Web.Filters;
     using Swashbuckle.AspNetCore.Swagger;
-    using ProjectManga.Data.Download;
+    using ProjectManga.Data.Repositories;
     using AutoMapper;
     using ProjectManga.Data;
     using ProjectManga.Domain;

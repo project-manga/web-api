@@ -1,10 +1,10 @@
-namespace ProjectManga.Data.Common
+namespace ProjectManga.Data.Extensions
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
-    using ProjectManga.Domain.Common.Vos;
+    using Domain.Common.Vos;
 
     public static class IQueryableExtensions
     {

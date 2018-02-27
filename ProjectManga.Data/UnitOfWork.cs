@@ -2,7 +2,7 @@ namespace ProjectManga.Data
 {
     using System;
     using System.Threading.Tasks;
-    using ProjectManga.Domain;
+    using Domain;
 
     public class UnitOfWork : IUnitOfWork
     {

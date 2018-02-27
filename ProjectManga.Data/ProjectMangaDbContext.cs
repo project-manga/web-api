@@ -3,8 +3,9 @@ namespace ProjectManga.Data
     using System;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.ValueGeneration;
-    using ProjectManga.Domain.Common;
-    using ProjectManga.Domain.Download.Models;
+    using Extensions;
+    using Domain.Common;
+    using Domain.Download.Models;
 
     public class ProjectMangaDbContext : DbContext
     {

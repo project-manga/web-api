@@ -1,4 +1,4 @@
-﻿namespace ProjectManga.Data.Download
+﻿namespace ProjectManga.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -6,12 +6,12 @@
     using System.Linq.Expressions;
     using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
-    using ProjectManga.Data.Common;
-    using ProjectManga.Domain;
-    using ProjectManga.Domain.Common.Vos;
-    using ProjectManga.Domain.Download;
-    using ProjectManga.Domain.Download.Models;
-    using ProjectManga.Domain.Download.Vos;
+    using Extensions;
+    using Domain;
+    using Domain.Common.Vos;
+    using Domain.Download;
+    using Domain.Download.Models;
+    using Domain.Download.Vos;
 
     /// <summary>
     /// Mediates between the download request domain and its data mapping using 
