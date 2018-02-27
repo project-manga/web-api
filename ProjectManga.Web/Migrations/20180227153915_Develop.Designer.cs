@@ -11,8 +11,8 @@ using System;
 namespace ProjectManga.Web.Migrations
 {
     [DbContext(typeof(ProjectMangaDbContext))]
-    [Migration("20180226162618_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20180227153915_Develop")]
+    partial class Develop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace ProjectManga.Web.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
-            modelBuilder.Entity("ProjectManga.Domain.Download.Models.DownloadRequest", b =>
+            modelBuilder.Entity("ProjectManga.Domain.Models.DownloadRequest", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -47,6 +47,8 @@ namespace ProjectManga.Web.Migrations
                     b.Property<string>("Sid")
                         .HasMaxLength(255);
 
+                    b.Property<int>("SourceId");
+
                     b.Property<int?>("ToChapter");
 
                     b.Property<int?>("ToChapterPart");
@@ -55,7 +57,47 @@ namespace ProjectManga.Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("SourceId");
+
                     b.ToTable("DownloadRequests");
+                });
+
+            modelBuilder.Entity("ProjectManga.Domain.Models.Source", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("DATETIME()");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime>("ModificationDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("DATETIME()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sources");
+                });
+
+            modelBuilder.Entity("ProjectManga.Domain.Models.DownloadRequest", b =>
+                {
+                    b.HasOne("ProjectManga.Domain.Models.Source", "Source")
+                        .WithMany()
+                        .HasForeignKey("SourceId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

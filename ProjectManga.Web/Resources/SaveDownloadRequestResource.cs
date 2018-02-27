@@ -3,7 +3,7 @@ namespace ProjectManga.Web.Resources
     using System.ComponentModel.DataAnnotations;
 
     public class SaveDownloadRequestResource
-    {                
+    {
         /// <summary>
         /// Gets or sets from chapter value.
         /// </summary>
@@ -34,6 +34,12 @@ namespace ProjectManga.Web.Resources
         /// Gets or sets to page value.
         /// </summary>
         public int? ToPage { get; set; }
+
+        /// <summary>
+        /// Gets or sets source id.
+        /// </summary>
+        /// <returns></returns>
+        public int SourceId { get; set; }
 
         /// <summary>
         /// Gets or sets sid value.

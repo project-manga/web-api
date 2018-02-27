@@ -14,6 +14,11 @@ namespace ProjectManga.Web
                 .ForMember(drr => drr.CreatedOn, opt => opt.MapFrom(dr => dr.CreationDateTime))
                 .ForMember(drr => drr.ModifiedOn, opt => opt.MapFrom(dr => dr.ModificationDateTime));
 
+            CreateMap<Source, IdNameExtendedResource<int>>()
+                .ForMember(ine => ine.Id, opt => opt.MapFrom(s => s.Id))
+                .ForMember(ine => ine.Name, opt => opt.MapFrom(s => s.Name))
+                .ForMember(ine => ine.Description, opt => opt.MapFrom(s => s.Description));
+
             CreateMap<DownloadRequest, SaveDownloadRequestResource>();
             CreateMap<QueryResult<DownloadRequest>, QueryResultResource<DownloadRequestResource>>();
 

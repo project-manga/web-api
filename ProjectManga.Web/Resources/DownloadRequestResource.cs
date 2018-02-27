@@ -57,5 +57,11 @@ namespace ProjectManga.Web.Resources
         /// </summary>
         /// <returns></returns>
         public DateTime ModifiedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets download request source.
+        /// </summary>
+        /// <returns></returns>
+        public IdNameExtendedResource<int> Source { get; set; }
     }
 }
