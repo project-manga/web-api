@@ -16,11 +16,16 @@ namespace ProjectManga.Data
 
 
         public DbSet<DownloadRequest> DownloadRequests { get; set; }
+        public DbSet<Source> Sources { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.DefaultBehavior<Source, int>();
+
             modelBuilder.DefaultBehavior<DownloadRequest, long>();
+
         }
     }
 }

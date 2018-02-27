@@ -40,5 +40,10 @@ namespace ProjectManga.Domain.Models
         /// <returns></returns>
         [StringLength(255)]
         public string Sid { get; set; }
+
+        [Required]
+        public int SourceId { get; set; }
+
+        public Source Source { get; set; }
     }
 }

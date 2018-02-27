@@ -40,7 +40,10 @@
 
         public async Task<DownloadRequest> FindAsync(long id)
         {
-            return await context.DownloadRequests.FindAsync(id);
+            return await context
+                .DownloadRequests
+                .Include(dr => dr.Source)
+                .SingleOrDefaultAsync(dr => dr.Id == id);
         }
 
         public async Task<IEnumerable<DownloadRequest>> FindAllAsync()
@@ -50,11 +53,14 @@
 
         public async Task<QueryResult<DownloadRequest>> FindAllAsync(DownloadRequestQuery filter)
         {
-            var query = context.DownloadRequests.AsQueryable();
+            var query = context.DownloadRequests
+                .Include(dr => dr.Source)
+                .AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(filter.Source))
+            if (filter.SourceId.HasValue)
             {
                 // filter by source
+                query = query.Where(dr => dr.Source.Id == filter.SourceId.Value);
             }
 
             if (!string.IsNullOrWhiteSpace(filter.Text))
@@ -62,6 +68,8 @@
                 // filter full text
                 var toLower = filter.Text.ToLower();
                 query = query.Where(dr => dr.Sid.ToLower().Contains(toLower));
+                query = query.Where(dr => dr.Source.Name.ToLower().Contains(toLower));
+                query = query.Where(dr => dr.Source.Description.ToLower().Contains(toLower));
             }
 
             var count = await query.CountAsync();
@@ -86,7 +94,8 @@
                 [nameof(DownloadRequest.FromPage).ToLower()] = dr => dr.FromPage,
                 [nameof(DownloadRequest.ToPage).ToLower()] = dr => dr.ToPage,
                 [nameof(DownloadRequest.Id).ToLower()] = dr => dr.Id,
-                [nameof(DownloadRequest.Sid).ToLower()] = dr => dr.Sid
+                [nameof(DownloadRequest.Sid).ToLower()] = dr => dr.Sid,
+                [nameof(DownloadRequest.Source).ToLower()] = dr => dr.Source.Name
             };
 
             query = query.ApplyOrdering(filter, columnsMap);
