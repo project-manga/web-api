@@ -12,6 +12,7 @@ namespace ProjectManga.Web.Controllers
     using ProjectManga.Web.Filters;
     using ProjectManga.Web.Resources;
     using static HttpConstants;
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
 
     /// <summary>
     /// Exposes web api for scheduled downloads.
@@ -44,6 +45,9 @@ namespace ProjectManga.Web.Controllers
         /// <param name="downloadRequestResource">Download request</param>
         [HttpPost]
         [Consumes(ApplicationJson)]
+        [Produces(ApplicationJson)]
+        [ProducesResponseType(typeof(DownloadRequestResource), 201)]
+        [ProducesResponseType(typeof(ModelStateDictionary), 400)]
         public async Task<IActionResult> CreateDownloadRequest([FromBody] SaveDownloadRequestResource downloadRequestResource)
         {
             if (!ModelState.IsValid)
@@ -58,7 +62,9 @@ namespace ProjectManga.Web.Controllers
 
             downloadRequest = await downloadRequestRepository.FindAsync(downloadRequest.Id);
 
-            return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
+            return CreatedAtAction(
+                nameof(CreateDownloadRequest),
+                mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
         }
 
         /// <summary>
@@ -66,7 +72,9 @@ namespace ProjectManga.Web.Controllers
         /// </summary>
         /// <param name="id">Download request id</param>
         [HttpGet("{id}")]
-        [Consumes(ApplicationJson)]
+        [Produces(ApplicationJson)]
+        [ProducesResponseType(typeof(DownloadRequestResource), 200)]
+        [ProducesResponseType(404)]
         public async Task<IActionResult> GetDownloadRequest(long id)
         {
             var request = await downloadRequestRepository.FindAsync(id);
@@ -83,8 +91,13 @@ namespace ProjectManga.Web.Controllers
         /// </summary>
         /// <param name="id">Download request id</param>
         /// <param name="downloadRequestResource">Download request</param>
+        /// <response code="201">Returns the created response</response>
         [HttpPut("{id}")]
         [Consumes(ApplicationJson)]
+        [Produces(ApplicationJson)]
+        [ProducesResponseType(typeof(DownloadRequestResource), 201)]
+        [ProducesResponseType(typeof(ModelStateDictionary), 400)]
+        [ProducesResponseType(404)]
         public async Task<IActionResult> UpdateDownloadRequest(
             long id,
             [FromBody] SaveDownloadRequestResource downloadRequestResource)
@@ -95,10 +108,18 @@ namespace ProjectManga.Web.Controllers
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             mapper.Map(downloadRequestResource, downloadRequest);
             await unitOfWork.CommitAsync();
 
-            return Ok(mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
+            return CreatedAtAction(
+                nameof(UpdateDownloadRequest),
+                new { id },
+                mapper.Map<DownloadRequest, DownloadRequestResource>(downloadRequest));
         }
 
         /// <summary>
@@ -107,7 +128,9 @@ namespace ProjectManga.Web.Controllers
         /// <param name="id">Download request id</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(long id) 
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Delete(long id)
         {
             var downloadRequest = await downloadRequestRepository.FindAsync(id);
             if (downloadRequest == null)
@@ -125,7 +148,8 @@ namespace ProjectManga.Web.Controllers
         /// Gets all download requests.
         /// </summary>
         [HttpGet]
-        [Consumes(ApplicationJson)]
+        [Produces(ApplicationJson)]
+        [ProducesResponseType(typeof(QueryResultResource<DownloadRequestResource>), 200)]
         public async Task<IActionResult> GetDownloadRequests(DownloadRequestQueryResource query)
         {
             var downloadRequests = await downloadRequestRepository.FindAllAsync(
