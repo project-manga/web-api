@@ -1,9 +1,8 @@
-﻿namespace ProjectManga.Domain.Download
+﻿namespace ProjectManga.Domain
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Models;
-    using Common.Vos;
     using Vos;
 
     /// <summary>

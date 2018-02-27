@@ -6,11 +6,9 @@ namespace ProjectManga.Web.Controllers
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
-    using ProjectManga.Domain;
-    using ProjectManga.Domain.Common.Vos;
-    using ProjectManga.Domain.Download;
-    using ProjectManga.Domain.Download.Models;
-    using ProjectManga.Domain.Download.Vos;
+    using Domain;
+    using Domain.Models;
+    using Domain.Vos;
     using ProjectManga.Web.Filters;
     using ProjectManga.Web.Resources;
     using static HttpConstants;

@@ -1,7 +1,5 @@
-namespace ProjectManga.Domain.Download.Vos
+namespace ProjectManga.Domain.Vos
 {
-    using Common.Vos;
-
     public class DownloadRequestQuery : Filter
     {
         public string Source { get; set; }

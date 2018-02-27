@@ -1,7 +1,6 @@
-namespace ProjectManga.Domain.Download.Models
+namespace ProjectManga.Domain.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using ProjectManga.Domain.Common;
 
     public class DownloadRequest : Entity<long>
     {

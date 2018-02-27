@@ -8,10 +8,8 @@
     using Microsoft.EntityFrameworkCore;
     using Extensions;
     using Domain;
-    using Domain.Common.Vos;
-    using Domain.Download;
-    using Domain.Download.Models;
-    using Domain.Download.Vos;
+    using Domain.Models;
+    using Domain.Vos;
 
     /// <summary>
     /// Mediates between the download request domain and its data mapping using 

@@ -2,8 +2,8 @@ namespace ProjectManga.Data.Extensions
 {
     using System;
     using Microsoft.EntityFrameworkCore;
-    using Domain.Common;
-    using Domain.Download.Models;
+    using Domain;
+    using Domain.Models;
 
     public static class DbContextExtensions
     {

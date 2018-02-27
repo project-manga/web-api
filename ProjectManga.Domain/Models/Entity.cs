@@ -1,4 +1,4 @@
-namespace ProjectManga.Domain.Common
+namespace ProjectManga.Domain
 {
     using System;
     using System.ComponentModel.DataAnnotations;

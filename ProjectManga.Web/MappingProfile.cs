@@ -1,8 +1,7 @@
 namespace ProjectManga.Web
 {
-    using Domain.Download.Models;
-    using Domain.Download.Vos;
-    using ProjectManga.Domain.Common.Vos;
+    using Domain.Models;
+    using Domain.Vos;
     using Resources;
     using System.Linq;
 

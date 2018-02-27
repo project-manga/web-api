@@ -6,7 +6,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using ProjectManga.Domain.Download;
+    using ProjectManga.Domain;
     using ProjectManga.Web.Filters;
     using Swashbuckle.AspNetCore.Swagger;
     using ProjectManga.Data.Repositories;

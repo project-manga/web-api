@@ -1,4 +1,4 @@
-namespace ProjectManga.Domain.Common.Vos
+namespace ProjectManga.Domain.Vos
 {
     public abstract class Filter : IQueryObject
     {
